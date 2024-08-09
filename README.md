@@ -1,31 +1,15 @@
-# React + Vite
+![Logo](https://i.pinimg.com/originals/76/bf/71/76bf71235a7e04cf10c464126b2a9f22.jpg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Entrega final REACT JS
 
-Currently, two official plugins are available:
+Esta enfoca se entrega fundamentalmente en la gestión integral del carrito de compras y el uso de Firebase como BBDD.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Alumno JT
 
+- [@codernameJT](https://github.com/CodernameJT/REaCTFinal)
 
-# Proyecto - React 62325
+## Support
 
+Muchas gracias al profe al tutor y lo mejor para ustedes en el futuro. Grandes personas se merecen grandes éxitos.
 
-## Installation
-
-Para instalar el proyecto, darle a:
-
-```bash
-  npm install 
-```
-    
-## Colores
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-| `api_key` | `string` | **Required**. Your API key |
-| `api_key` | `string` | **Required**. Your API key |
-| `api_key` | `string` | **Required**. Your API key |
-| `api_key` | `string` | **Required**. Your API key |
-
+Mensión especial para el nuevo miembro de la familia DFS. "Seamos libres, lo demás no importa nada." (si, lo dijo él)
