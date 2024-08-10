@@ -14,9 +14,7 @@ const Item = ({ nombre, precio, id }) => {
             <img className="img" src="https://img.freepik.com/fotos-premium/botella-vino-blanco-tapon-rojo-etiqueta_664601-8179.jpg" />
             <p>Precio: <b>${precio}</b></p>
             <button onClick={() => agregarAlCarrito(id)}>Agregar al carrito</button>
-            <Link to={`/detalle/${id}`}>
-                <button>Ver detalle</button>
-            </Link>
+
         </div>
     );
 };

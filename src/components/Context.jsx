@@ -4,13 +4,15 @@ import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 import Swal from "sweetalert2";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAWhKqsLnZsiRg0KIsauJ-uyAxjWtZV91k",
-    authDomain: "react-flex-62325.firebaseapp.com",
-    projectId: "react-flex-62325",
-    storageBucket: "react-flex-62325.appspot.com",
-    messagingSenderId: "775561287974",
-    appId: "1:775561287974:web:4707ef40da7169152fc9e7"
+    apiKey: "AIzaSyA8WrLuEW2mNlEB2VmxoRmvWSKnsXlUpug",
+    authDomain: "codernamejt-reactjs.firebaseapp.com",
+    projectId: "codernamejt-reactjs",
+    storageBucket: "codernamejt-reactjs.appspot.com",
+    messagingSenderId: "317485687993",
+    appId: "1:317485687993:web:e4a8e5e3d4f074035ce768"
 };
+
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -93,11 +95,16 @@ export const ContextProvider = (props) => {
         setCarrito(carritoAuxiliar);
     }
     
+    function clearCart() {
+        setCarrito([]);
+    }
+    
 
     return (
-        <AppContext.Provider value={{ productos, carrito, setCarrito, cargarData, agregarAlCarrito, removeFromCart, crearOrden }}>
+        <AppContext.Provider value={{ productos, carrito, setCarrito, cargarData, agregarAlCarrito, removeFromCart, clearCart, crearOrden }}>
             {props.children}
         </AppContext.Provider>
     );
+    
     
 };

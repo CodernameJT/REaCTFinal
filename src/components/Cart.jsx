@@ -24,7 +24,18 @@ const Cart = () => {
     };
 
     const handleFinishPurchase = () => {
-        Swal.fire('¡Compra realizada con éxito!', '', 'success');
+        if (aggregatedCart.length === 0) {
+            Swal.fire({
+                title: 'Carrito vacío',
+                text: 'No puedes finalizar la compra porque tu carrito está vacío.',
+                icon: 'warning',
+            });
+            return;
+        }
+
+        Swal.fire('¡Compra realizada con éxito!', '', 'success').then(() => {
+            clearCart();
+        });
     };
 
     const handleAddToCart = (item) => {
