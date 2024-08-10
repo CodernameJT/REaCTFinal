@@ -16,7 +16,7 @@
     list-style-type: none;
 }
 .item-text{
-    color: white;
+    color: rgb(141, 29, 29);
 }
 .item-text:hover{
     cursor: pointer

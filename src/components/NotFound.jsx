@@ -25,12 +25,12 @@ const NotFound = () => {
 
       {/* Animated cloud with text */}
       <div className={`cloud-text ${isAnimated ? 'animated' : ''}`}>
-        <p>Ay, caramba! You seem to be lost in the multiverse, friend.</p>
+        <p>Ay, caramba! acá no hay nada.</p>
       </div>
 
       {/* Animated button */}
       <button className={`go-home-button ${isAnimated ? 'animated' : ''}`} onClick={handleButtonClick}>
-        Take me back to Springfield!
+        Llevame a la página principal!
       </button>
     </div>
   );

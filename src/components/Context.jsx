@@ -4,12 +4,12 @@ import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 import Swal from "sweetalert2";
 
 const firebaseConfig = {
-    apiKey: "proccess.env.AIzaSyA8WrLuEW2mNlEB2VmxoRmvWSKnsXlUpug",
-    authDomain: "proccess.env.codernamejt-reactjs.firebaseapp.com",
-    projectId: "proccess.env.codernamejt-reactjs",
-    storageBucket: "proccess.env.codernamejt-reactjs.appspot.com",
-    messagingSenderId: "proccess.env.317485687993",
-    appId: "proccess.env.1:317485687993:web:e4a8e5e3d4f074035ce768"
+    apiKey: "AIzaSyA8WrLuEW2mNlEB2VmxoRmvWSKnsXlUpug",
+    authDomain: "codernamejt-reactjs.firebaseapp.com",
+    projectId: "codernamejt-reactjs",
+    storageBucket: "codernamejt-reactjs.appspot.com",
+    messagingSenderId: "317485687993",
+    appId: "1:317485687993:web:e4a8e5e3d4f074035ce768"
 };
 
 
