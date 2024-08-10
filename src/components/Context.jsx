@@ -28,9 +28,7 @@ export const ContextProvider = (props) => {
     const [carrito, setCarrito] = useState([]);
 
     function cargarData() {
-
         getDocs(productsCollection).then(snapshot => {
-            // let arrayProductos = snapshot.docs.map(el => el.data()).sort((a,b) => a.id - b.id); // Ordenados por id
             let arrayProductos = snapshot.docs.map(el => el.data());
             setProductos(arrayProductos);
         }).catch(err => console.error(err));
@@ -38,22 +36,23 @@ export const ContextProvider = (props) => {
 
     function agregarAlCarrito(id) {
         const carritoAuxiliar = [...carrito];
+        const productoEnCarrito = carritoAuxiliar.find(el => el.id === id);
 
-        const productoAAgregar = productos.find(el => el.id === id);
+        if (productoEnCarrito) {
+            if (productoEnCarrito.cantidad < 10) {
+                productoEnCarrito.cantidad += 1;
+            } else {
+                Swal.fire('No puedes agregar más de 10 unidades por producto', '', 'warning');
+            }
+        } else {
+            const productoAAgregar = productos.find(el => el.id === id);
+            carritoAuxiliar.push({ ...productoAAgregar, cantidad: 1 });
+        }
 
-        // 1. Tenemos que validar si el producto ya existe.
-        // 2. Por ejemplo: some, comparo por id
-
-        // carritoAuxiliar.some(el => el.id === id);
-
-        // 3. Crear un nuevo objeto igual a productoAAgregar pero que además tenga la propiedad "CANTIDAD". Cuando el objeto no está en el array, le ponemos cantidad = 1. Cuando el objeto está en el array, le modificamos la cantidad sumándole 1.
-
-        carritoAuxiliar.push(productoAAgregar);
         setCarrito(carritoAuxiliar);
     };
 
     function crearOrden() {
-
         if (carrito.length > 0) {
             const nuevaOrden = {
                 nombre: "Lucas Ruiz",
@@ -74,13 +73,31 @@ export const ContextProvider = (props) => {
                 title: "Error",
                 text: "Tu carrito está vacío!",
                 icon: "error"
-              });
+            });
         };
     };
 
+    function removeFromCart(id) {
+        const carritoAuxiliar = [...carrito];
+        const productoEnCarrito = carritoAuxiliar.find(el => el.id === id);
+    
+        if (productoEnCarrito) {
+            if (productoEnCarrito.cantidad > 1) {
+                productoEnCarrito.cantidad -= 1;
+            } else {
+                const index = carritoAuxiliar.indexOf(productoEnCarrito);
+                carritoAuxiliar.splice(index, 1);
+            }
+        }
+    
+        setCarrito(carritoAuxiliar);
+    }
+    
+
     return (
-        <AppContext.Provider value={{ productos, carrito, setCarrito, cargarData, agregarAlCarrito, crearOrden }}>
+        <AppContext.Provider value={{ productos, carrito, setCarrito, cargarData, agregarAlCarrito, removeFromCart, crearOrden }}>
             {props.children}
         </AppContext.Provider>
     );
+    
 };

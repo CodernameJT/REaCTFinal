@@ -1,7 +1,7 @@
 const productos = [
     {
         id: 1,
-        nombre: "Agua",
+        nombre: "Agua sin gas",
         precio: 10,
         categoria: "Sin alcohol"
     },
